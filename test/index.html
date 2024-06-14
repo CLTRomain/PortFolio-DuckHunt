@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider Example</title>
+    <style>
+        /* Optional: Add some styling to the slider */
+        input[type="range"] {
+            width: 300px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <label for="slider">Select a value:</label>
+    <!-- The input element with type="range" -->
+    <input type="range" id="slider" name="slider" min="0" max="100" step="100" value="0">
+
+    <!-- Optional: Display the selected value -->
+    <p id="sliderValue">Selected value: 0</p>
+
+    <script>
+        // JavaScript to update the displayed value when the slider changes
+        const slider = document.getElementById('slider');
+        const sliderValueDisplay = document.getElementById('sliderValue');
+
+        // Add an event listener to the slider
+        slider.addEventListener('input', function () {
+            // Update the displayed value
+            sliderValueDisplay.textContent = 'Selected value: ' + slider.value;
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" href="media/logo.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duck Hunt</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+
+
+<body>
+    <audio id="music" controls loop play>
+        <source src="media/music/banger.mp3" type="audio/mp3">
+    </audio>
+
+    <div id="fps-display"></div>
+    <button class="night-mode-btn">
+        <div class="moon"></div>
+        <div class="minidirt"></div>
+        <div class="stars-btn">
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+        </div>
+        <div class="cloud-btn">
+            <div class="cloud-btn2"></div>
+            <div class="cloud-btn2"></div>
+        </div>
+    </button>
+
+
+    <div id="menu">
+        <img id="logo" src="media/logo.ico" />
+        <div class="menu-buttons">
+            <button class="button startBtn" onclick="startGame()">Quick Play</button>
+            <button class="button startBtn" onclick="startGameStory()">Story Mode</button>
+            <button class="button settingsBtn" onclick="showSettings()">Settings
+                <div class="openSettings">
+                    <div class="line"></div>
+                    <div class="volume-fader">
+                        <label for="volumeSlider">Volume</label>
+                        <input type="range" id="volumeSlider" min="0" max="100" step="1" value="100">
+                    </div>
+                    <div class="sfx-fader">
+                        <label for="sfxSlider">SFX</label>
+                        <input type="range" id="sfxSlider" min="0" max="100" step="1" value="100">
+                    </div>
+                </div>
+            </button>
+            <button class="button difficultyBtn" onclick="setDifficulty()">Difficulty
+                <div class="openDifficulty">
+                    <div class="line"></div>
+                    <p id="difficulty-label">Easy</p>
+                    <input type="range" id="difficulty-slider" min="1" max="4" step="1" value="1" />
+                    <p id="speed-label">Speed: slow</p>
+                </div>
+            </button>
+            <button class="button rankingBtn" onclick="showRanking()">Ranking
+                <div class="openRanking">
+                    <div class="line"></div>
+                    <div id="rankingContainer"></div>
+                </div>
+            </button>
+        </div>
+    </div>
+
+
+
+
+    <div class="scenarioscreen">
+        <div class="dialbox">
+            <div class="dial dialdog">
+                <div class="intro dogintro haha"></div>
+                <p class="dialog">
+
+                    I'm really angry !!! <br> let's see what can i eat...</p>
+            </div>
+            <div class="dial dialbird">
+                <div class="intro bird affraid"></div>
+
+                <p class="dialog">You won't hit a single one of us</p>
+            </div>
+        </div>
+        <button class="story button startBtn" onclick="startGame()">Start</button>
+    </div>
+
+    <div class="endscreen">
+        <div class="dialbox">
+            <div class="dial dialdog">
+                <div class="intro dogintro haha"></div>
+                <p class="dialog">
+                    You fly so fast !!! i'm gonna eat grass.</p>
+            </div>
+            <div class="dial dialbird">
+                <div class="intro bird affraid"></div>
+
+                <p class="dialog">I told you haha !!!</p>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+
+    <div id="fail-screen">FAILED
+        <div id="usernameForm">
+            <label for="usernameInput">Enter your username:</label>
+            <p>to save your score in the scoreboard</p>
+            <input type="text" id="usernameInput" maxlength="5" placeholder="Max 5 characters" />
+            <button id="applyUsername" onclick="envApi()">Submit</button>
+            <div class="buttonDiv">
+                <button onclick="restart()">retry</button>
+                <button onclick="location.reload()">menu</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="mountain"></div>
+
+    <div class="dirt">
+        <div class="score">0</div>
+    </div>
+
+    <div class="sky">
+        <div class="clouds">
+            <div class="cloud"></div>
+            <div class="cloud"></div>
+            <div class="cloud"></div>
+        </div>
+        <div class="clouds2">
+            <div class="cloud2"></div>
+            <div class="cloud2"></div>
+        </div>
+    </div>
+
+    <section class="divbackground">
+        <div class="dog snif"></div>
+        <!--         <div class="counter-dog"></div> -->
+        <div class="timediv">
+            <div class="timer">00:10</div>
+            <div class="timer-foot"></div>
+        </div>
+
+        <div class="grass">
+            <div class="trees">
+                <div class="tree"></div>
+                <div class="tree"></div>
+                <div class="tree"></div>
+                <div class="tree"></div>
+            </div>
+            <div class="bushes">
+                <div class="bush"></div>
+                <div class="bush"></div>
+                <div class="bush"></div>
+                <div class="bush"></div>
+                <div class="bush"></div>
+            </div>
+        </div>
+    </section>
+    <div id="game-container"></div>
+
+</body>
+<script src="script.js"></script>
+<script src="fps.js"></script>
+
+
+</html>

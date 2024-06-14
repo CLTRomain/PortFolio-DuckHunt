@@ -1,0 +1,68 @@
+/* .dog {
+    margin: 100px;
+    height: 50px;
+    width: 60px;
+    background-image: url(/media/duckSprite.png);
+    transform: scale(200%);
+    background-repeat: no-repeat;
+}
+
+.snif {
+    animation: snifDog 0.5s steps(5) infinite;
+}
+
+@keyframes snifDog {
+    0% {
+        background-position: 0px 0px;
+    }
+    100% {
+        background-position: -300px 0px;
+    }
+}
+
+.find {
+    animation: findAnimation 2s steps(2) infinite;
+}
+
+@keyframes findAnimation{
+    0% {
+        background-position: 0px -58px;
+    }
+    25% {
+        background-position: 0px -58px;
+    }
+    50%{
+        background-position: 0px -58px;
+    }
+    75%{
+        background-position: -120px -58px;
+    }
+    100% {
+        background-position: -120px -58px;
+    }
+    
+}
+
+.laugh {
+    animation: laughAnimation 0.4s steps(1) infinite;
+}
+
+@keyframes laughAnimation{
+    0% {
+        background-position: -180px -58px;
+    }
+    50% {
+        background-position: -240px -58px;
+    }
+    100% {
+        opacity: 0%;
+    }
+}
+
+.one-duck {
+    background-position: -320px 0px;
+}
+
+.two-duck {
+    background-position: -320px -58px;
+} */
