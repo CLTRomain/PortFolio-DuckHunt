@@ -564,58 +564,58 @@ function failed() {
   }
 
 }
-const butApply = document.getElementById('applyUsername');
+//const butApply = document.getElementById('applyUsername');
 
-function envApi() {
-  const playerName = document.getElementById("usernameInput").value;
-  const playerData = {
-    username: playerName,
-    score: deadDucks,
-  };
+// function envApi() {
+//   const playerName = document.getElementById("usernameInput").value;
+//   const playerData = {
+//     username: playerName,
+//     score: deadDucks,
+//   };
 
-  fetch("http://127.0.0.1:8080/addscore", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(playerData),
-  })
-    .then((response) => response.json())
-  butApply.style.backgroundColor = '#234725'
-  butApply.style.pointerEvents = 'none'
+//   fetch("http://127.0.0.1:8080/addscore", {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//     body: JSON.stringify(playerData),
+//   })
+//     .then((response) => response.json())
+//   butApply.style.backgroundColor = '#234725'
+//   butApply.style.pointerEvents = 'none'
 
-}
+// }
 
-const openRanking = document.querySelector('.openRanking');
+// const openRanking = document.querySelector('.openRanking');
 
-function showRanking() {
-  openRanking.classList.toggle('active');
+// function showRanking() {
+//   openRanking.classList.toggle('active');
 
-  fetch('http://127.0.0.1:8080/getscoreboard', {
-    method: 'GET',
-  })
-    .then(response => response.json())
-    .then(data => {
-      updateRankingHTML(data);
-    })
-    .catch(error => {
-      console.error('Error:', error);
-    });
+//   fetch('http://127.0.0.1:8080/getscoreboard', {
+//     method: 'GET',
+//   })
+//     .then(response => response.json())
+//     .then(data => {
+//       updateRankingHTML(data);
+//     })
+//     .catch(error => {
+//       console.error('Error:', error);
+//     });
 
-}
+// }
 
-function updateRankingHTML(rankingData) {
-  var rankingContainer = document.getElementById('rankingContainer');
-  rankingContainer.innerHTML = '';
-  var list = document.createElement('ul');
+// function updateRankingHTML(rankingData) {
+//   var rankingContainer = document.getElementById('rankingContainer');
+//   rankingContainer.innerHTML = '';
+//   var list = document.createElement('ul');
 
-  for (var i = 0; i < Math.min(10, rankingData.length); i++) {
-    var listItem = document.createElement('li');
-    listItem.textContent = `${i + 1}. ${rankingData[i].username} - Score: ${rankingData[i].score}`;
-    list.appendChild(listItem);
-  }
-  rankingContainer.appendChild(list);
-}
+//   for (var i = 0; i < Math.min(10, rankingData.length); i++) {
+//     var listItem = document.createElement('li');
+//     listItem.textContent = `${i + 1}. ${rankingData[i].username} - Score: ${rankingData[i].score}`;
+//     list.appendChild(listItem);
+//   }
+//   rankingContainer.appendChild(list);
+// }
 
 
 /* Night Mode */
